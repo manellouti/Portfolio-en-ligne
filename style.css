@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  /* This class is added on scroll */
+  .fixed {
+    position: fixed;
+    top: 0;
+    height: 70px;
+    z-index: 1;
+  }
+  
+  body {
+    color: #fff;
+    font-family: "open-sans-bold", AvenirNext-Medium, sans-serif;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  /* Navigation Settings */
+  nav {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    background: #272525;
+  }
+  
+  nav :hover {
+    color: #ca97c9;
+  }
+  
+  nav li {
+    display: inline-block;
+    padding: 24px 10px;
+  }
+  
+  nav li a {
+    color: #858a8c;
+    text-transform: uppercase;
+  }
+  
+  section {
+    height: 100vh;
+  }
+  
+  /* Screens Settings */
+  #screen1 img {
+    background: url(./assets/banniere.png) rgba(0, 0, 0, 0.397) 0 no-repeat;
+    width: 100%;
+    height: 92vh;
+  }
+  
+/* Conteneur pour limiter la largeur visible */
+.scrolling-text-container {
+    width: 1200px;          /* Largeur du conteneur */
+    height: 30px;          /* Hauteur du conteneur */
+    overflow: hidden;      /* Masque le texte qui dépasse */
+    position: relative;    /* Pour positionner le texte en absolu par rapport à ce conteneur */
+    white-space: nowrap;   /* Empêche le texte de passer à la ligne */
+    background-color: #272525; /* Ajout d'une couleur de fond pour rendre le texte visible */
+}
+
+/* Texte défilant */
+.scrolling-text {
+    display: inline-block;
+    position:absolute;     /* Positionné par rapport au conteneur */
+    animation: scroll-left 5s linear infinite; /* Animation sur 10 secondes */
+    font-size: 20px;        /* Taille du texte */
+    line-height: 40px;      /* Hauteur de ligne pour centrer le texte verticalement */
+    color: #ca97c9;           /* Couleur du texte */
+}
+
+/* Animation de défilement vers la gauche */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Commence à droite, en dehors du conteneur */
+    }
+    100% {
+        transform: translateX(-100%); /* Finit à gauche, en dehors du conteneur */
+    }
+}
+
+
+  #about {
+    background: #272525;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  
+  #about img {
+    margin: 20px 0;
+    border:#858a8c;
+    border-radius: 150px;
+  }
+  
+  #about img:hover {
+    color: #858a8c;
+  }
+
+  #competences {
+    background:#272525;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+
+  h2,h1 {
+    color:#b08db4;
+    font-size: 2rem;
+  }
+
+  #competences h2 {
+    margin: 20px 0;
+  }
+
+  h2{width: 100%;}
+
+  #creations {
+    background:#272525;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+  }
+
+  .portfolio {
+    display: flex;
+    color: black;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permet au contenu de s'adapter sur plusieurs lignes */
+    margin: 20px; /* Ajoute un espacement autour du portfolio */
+}
+
+.portfolio-title {
+    text-align:center; 
+    margin: 20px 0; /* Ajoute de l'espace au-dessus et en dessous du titre */
+    font-size: 2rem; 
+    color: #ca97c9; 
+    font-weight: bold; /* Gras */
+}
+
+.item {
+    background: rgb(255, 255, 255);
+    padding: 20px; /* Réduit le padding pour une apparence plus légère */
+    border: 1px solid #ca97c9;
+    border-radius: 10px; /* Bordure légèrement moins épaisse */
+    text-align: center;
+    width: 200px;
+    margin: 10px; /* Ajoute de l'espace entre les éléments */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre légère pour la profondeur */
+    transition: transform 0.2s; /* Ajoute une transition douce */
+}
+
+.item:hover {
+    transform: translateY(-5px); /* Léger effet d'élévation au survol */
+}
+
+.open-modal {
+    background-color: #ca97c9;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px; /* Ajuste la taille de la police */
+}
+
+.open-modal:hover {
+    background-color: #b08db4; /* Changement de couleur plus doux au survol */
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    color: black;
+    background-color: rgba(0,0,0,0.7); /* Augmente l'opacité pour un meilleur contraste */
+}
+
+.modal-content {
+    background-color: #ffffff; /* Fond blanc pour le contenu de la modal */
+    margin: 10% auto; /* Réduit la marge supérieure */
+    padding: 20px;
+    border-radius: 10px; /* Ajoute des coins arrondis */
+    width: 40%; /* Rendre le contenu de la modal plus large */
+    max-width: 600px; /* Largeur maximale pour éviter qu'il ne devienne trop large */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Ajoute une ombre plus marquée */
+    position: relative; /* Position pour le close button */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  #objectifs {
+    background:#272525;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  
+  @media only screen and (max-width: 520px) {
+    nav li {
+padding: 24px 4px;
+    }
+  
+    nav li a {
+      font-size: 14px;
+    }
+  }
