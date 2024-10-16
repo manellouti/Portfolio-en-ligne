@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<section id="screen1">
+    <img src="./assets/banniere.png" alt="banniere">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#competences">Compétences</a></li>
+        <li><a href="index.html#creations">Créations</a></li>
+        <li><a href="index.html#objectifs">Objectifs</a></li>
+        <li><a href="http://127.0.0.1:5501/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="scrolling-text-container">
+      <div class="scrolling-text">
+        <p>Scroll to see.</p>
+      </div>
+    </div>
+  </header>
+</section>
 <body>
-    
+    <section class="get-in-touch">
+        <h1 class="title">Contact</h1>
+        <form class="contact-form row">
+           <div class="form-field col x-50">
+              <input id="name" class="input-text js-input" type="text" required>
+              <label class="label" for="name">Prénom</label>
+           </div>
+           <div class="form-field col x-50">
+              <input id="email" class="input-text js-input" type="email" required>
+              <label class="label" for="email">E-mail</label>
+           </div>
+           <div class="form-field col x-100">
+              <input id="message" class="input-text js-input" type="text" required>
+              <label class="label" for="message">Message</label>
+           </div>
+           <div class="form-field col x-100 align-center">
+              <input class="submit-btn" type="submit" value="Submit">
+           </div>
+        </form>
+     </section>
 </body>
 </html>

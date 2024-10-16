@@ -8,7 +8,7 @@
   </head>
   <body>
     <section id="screen1">
-        <img src="./assets/banniere.png" alt="banniere">
+      <img src="./assets/banniere.png" alt="banniere" />
       <header>
         <nav>
           <ul>
@@ -16,7 +16,7 @@
             <li><a href="#competences">Compétences</a></li>
             <li><a href="#creations">Créations</a></li>
             <li><a href="#objectifs">Objectifs</a></li>
-            <li><a href="#contact.html">Contact</a></li>
+            <li><a href="http://127.0.0.1:5501/contact.html">Contact</a></li>
           </ul>
         </nav>
         <div class="scrolling-text-container">
@@ -27,24 +27,26 @@
       </header>
     </section>
     <section id="about">
-      <div>
-        <h1>Présentation</h1>
-        <figure>
-          <img src="./assets/logo.png" alt="logo" width="300px" />
-        </figure>
-        <p>
-          Bonjour, je m'appelle Manel Louti, j'ai 20 ans et je suis actuellement
-          en formation developpeur web. 
-          Je suis en cours de création d'un site
-          web dédié à la création de sites internet, webmastour.com. 
-          Ce projet est destiné aux jeunes entrepreneuses qui souhaitent créer leur propre
-          site à un prix accessible, avec un suivi personnalisé. Ce projet
-          permet aux femmes de discuter librement dans un environnement de
-          soutien. Je travaille également comme monteuse vidéo pour une
-          psychologue active sur Instagram. Je monte ses vidéos pour ses réseaux sociaux.
-        </p>
-      </div>
-    </section>
+        <div>
+            <h1>Présentation</h1>
+            <figure>
+                <a href="https://tonsite.com" target="_blank" class="logo-link">
+                    <img src="./assets/logo.png" alt="logo" width="300px" />
+                </a>
+            </figure>
+            <p>
+                Bonjour, je m'appelle Manel Louti, j'ai 20 ans et je suis actuellement
+                en formation developpeur web. Je suis en cours de création d'un site
+                web dédié à la création de sites internet, webmastour.com. Ce projet
+                est destiné aux jeunes entrepreneuses qui souhaitent créer leur propre
+                site à un prix accessible, avec un suivi personnalisé. Ce projet
+                permet aux femmes de discuter librement dans un environnement de
+                soutien. Je travaille également comme monteuse vidéo pour une
+                psychologue active sur Instagram. Je monte ses vidéos pour ses réseaux
+                sociaux.
+              </p>
+            </div>
+          </section>
     <section id="competences">
       <div>
         <h2>Compétences</h2>
@@ -60,74 +62,95 @@
       </div>
     </section>
     <section id="creations">
-        <h2 class="portfolio-title">Créations</h2>
-        <div class="portfolio">
-            <div class="item">
-                <h3>Webmastour</h3>
-                <img src="./assets/site.png" alt="site" width="200px">
-                <button class="open-modal" data-modal="modal1">Voir plus</button>
-            </div>
-            <div class="item">
-                <h3>Espace commentaire</h3>
-                <img src="./assets/commentaire.png" alt="commentaire"
-                width="200px">
-                <button class="open-modal" data-modal="modal2">Voir plus</button>
-            </div>
-            <div class="item">
-                <h3>Cv en ligne</h3>
-                <img src="./assets/cv.png" alt="cv" width="200px">
-                <button class="open-modal" data-modal="modal3">Voir plus</button>
-            </div>
-            <div class="item">
-                <h3>Formulaire de contact</h3>
-                <img src="./assets/contact.png" alt="contact-form" width="200px">
-                <button class="open-modal" data-modal="modal4">Voir plus</button>
-            </div>
+      <h2 class="portfolio-title">Créations</h2>
+      <div class="portfolio">
+        <div class="item">
+          <h3>Webmastour</h3>
+          <img src="./assets/site.png" alt="site" width="200px" />
+          <button class="open-modal" data-modal="modal1">Voir plus</button>
         </div>
-        
-        <!-- Modals -->
-        <div class="modal" id="modal1">
-            <div class="modal-content">
-                <img src="./assets/site.png" alt="site" width="300px">
-                <span class="close" data-modal="modal1">&times;</span>
-                <h2>Webmastour</h2>
-                <p>Mon site de création de site web en Wordpress.</p>
-                <a href="https://webmastour.com/" target="_blank"><p>Voir le site</p></a>
-            </div>
+        <div class="item">
+          <h3>Espace commentaire</h3>
+          <img src="./assets/commentaire.png" alt="commentaire" width="200px" />
+          <button class="open-modal" data-modal="modal2">Voir plus</button>
         </div>
-        
-        <div class="modal" id="modal2">
-            <div class="modal-content">
-                <img src="./assets/commentaire.png" alt="commentaire"
-                width="300px">
-                <span class="close" data-modal="modal2">&times;</span>
-                <h2>Dynamiser un espace commentaire</h2>
-                <p>Devoir de dynamisation d'un espace commentaire en JavaScript.</p>
-                <a href="https://github.com/manellouti/Dynamiser_un_espace_commentaire" target="_blank"><p>Voir sur github</p></a>
-            </div>
+        <div class="item">
+          <h3>Cv en ligne</h3>
+          <img src="./assets/cv.png" alt="cv" width="200px" />
+          <button class="open-modal" data-modal="modal3">Voir plus</button>
         </div>
-        
-        <div class="modal" id="modal3">
-            <div class="modal-content">
-                <img src="./assets/cv.png" alt="cv" width="300px">
-                <span class="close" data-modal="modal3">&times;</span>
-                <h2>Cv en ligne</h2>
-                <p>Devoir de reproduction d'un cv en respectant un model en Html et CSS.</p>
-                <a href="https://github.com/manellouti/cv-repo" target="_blank"><p>Voir sur github</p></a>
-            </div>
+        <div class="item">
+          <h3>Formulaire de contact</h3>
+          <img src="./assets/contact.png" alt="contact-form" width="200px" />
+          <button class="open-modal" data-modal="modal4">Voir plus</button>
         </div>
-        <div class="modal" id="modal4">
-            <div class="modal-content">
-                <img src="./assets/contact.png" alt="contact-form" width="300px">
-                <span class="close" data-modal="modal4">&times;</span>
-                <h2>Formulaire de contact (router)</h2>
-                <p> Crée à l'aide d'un router et d'Email.js en javasciprt avec vue.js.</p>
-                <a href="https://github.com/manellouti/portfolio" target="_blank"><p>Voir sur github</p></a>
-            </div>
+      </div>
+
+      <!-- Modals -->
+      <div class="modal" id="modal1">
+        <div class="modal-content">
+          <img src="./assets/site.png" alt="site" width="300px" />
+          <span class="close" data-modal="modal1">&times;</span>
+          <h2>Webmastour</h2>
+          <p>Mon site de création de site web en Wordpress.</p>
+          <a href="https://webmastour.com/" target="_blank"
+            ><p>Voir le site</p></a
+          >
         </div>
-      </section>
-    
-    <section id="objectifs"></section>
+      </div>
+
+      <div class="modal" id="modal2">
+        <div class="modal-content">
+          <img src="./assets/commentaire.png" alt="commentaire" width="300px" />
+          <span class="close" data-modal="modal2">&times;</span>
+          <h2>Dynamiser un espace commentaire</h2>
+          <p>Devoir de dynamisation d'un espace commentaire en JavaScript.</p>
+          <a
+            href="https://github.com/manellouti/Dynamiser_un_espace_commentaire"
+            target="_blank"
+            ><p>Voir sur github</p></a
+          >
+        </div>
+      </div>
+
+      <div class="modal" id="modal3">
+        <div class="modal-content">
+          <img src="./assets/cv.png" alt="cv" width="300px" />
+          <span class="close" data-modal="modal3">&times;</span>
+          <h2>Cv en ligne</h2>
+          <p>
+            Devoir de reproduction d'un cv en respectant un model en Html et
+            CSS.
+          </p>
+          <a href="https://github.com/manellouti/cv-repo" target="_blank"
+            ><p>Voir sur github</p></a
+          >
+        </div>
+      </div>
+      <div class="modal" id="modal4">
+        <div class="modal-content">
+          <img src="./assets/contact.png" alt="contact-form" width="300px" />
+          <span class="close" data-modal="modal4">&times;</span>
+          <h2>Formulaire de contact (router)</h2>
+          <p>
+            Crée à l'aide d'un router et d'Email.js en javasciprt avec vue.js.
+          </p>
+          <a href="https://github.com/manellouti/portfolio" target="_blank"
+            ><p>Voir sur github</p></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="objectifs">
+      <h2>Objectifs</h2>
+      <p>
+        Je suis à la recherche d'opportunités pour renforcer mes compétences en
+        développement web. Mon objectif est de gagner de l'expérience, de lancer
+        mon business avec Webmastour, et de continuer à apprendre tout en
+        contribuant à des projets significatifs.
+      </p>
+    </section>
 
     <script src="script.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
