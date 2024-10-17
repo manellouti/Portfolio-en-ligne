@@ -1,8 +1,30 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
-  
+  @media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2em;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
   a {
     text-decoration: none;
   }
@@ -629,6 +651,10 @@ h2 {
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
   }
+
+  #objectifs a {
+    color: #d5135a;
+  }
   
   @keyframes fadeIn {
     from {
@@ -795,4 +821,133 @@ padding: 24px 4px;
        }
     }
  }
- 
+
+ /* Basic Styles for the Footer */
+ .site-footer {
+  display: flex;
+  justify-content:center; /* Centre horizontalement les éléments */
+  align-items: center; /* Centre verticalement les éléments */
+  background-color: #000000; /* Couleur de fond noir */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.139); /* Ombre noire */
+  padding: 60px 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #bdc3c7;
+}
+
+.site-footer > * {
+  margin: 0 15px; /* Ajoute de l'espace entre les éléments */
+}
+
+/* Ajout d'un style pour les liens, si applicable */
+.site-footer a {
+  color: #bdc3c7;
+  text-decoration: none; /* Supprime le soulignement */
+  display:flex;
+  justify-content:center;
+  text-align:center;
+}
+
+.site-footer a:hover {
+  text-decoration: underline; /* Ajoute un soulignement au survol */
+}
+
+
+.site-footer h6 {
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 35px;
+  position: relative;
+}
+
+.site-footer h6:before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 2px;
+  background-color: #d5135a;
+  bottom: -10px;
+  left: 0;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.footer-links a {
+  display: flex;
+  align-items:center;
+  justify-content:space-around;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #bdc3c7;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color:#d5135a;
+  text-decoration: none;
+}
+
+/* Social Icons */
+.social-icons {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.social-icons a {
+  color: #bdc3c7;
+  font-size: 20px;
+  background-color: #34495e;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.social-icons a:hover {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+/* Copyright Text */
+.copyright-text {
+  margin: 20px 0 0;
+  color: #7f8c8d;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .site-footer {
+    text-align: center;
+  }
+
+  .site-footer .row {
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    text-align: center;
+  }
+
+  .social-icons {
+    text-align:center;
+  }
+}
