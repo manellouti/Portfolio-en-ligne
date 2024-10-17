@@ -28,11 +28,11 @@
     bottom: 0;
     width: 100%;
     height: 90px;
-    background: #272525;
+    background-color:#000000;
   }
   
   nav :hover {
-    color: #ca97c9;
+    color: #fd2e65;
   }
   
   nav li {
@@ -41,77 +41,305 @@
   }
   
   nav li a {
-    color: #858a8c;
+    color: #929090;
     text-transform: uppercase;
   }
-  
+  nav {
+    z-index: 2; /* Plus élevé que l'overlay */
+  }
   section {
     height: 100vh;
   }
-  
-  /* Screens Settings */
-  #screen1 img {
-    background: url(./assets/banniere.png) rgba(0, 0, 0, 0.397) 0 no-repeat;
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700&subset=latin-ext');
+
+html {
+  position: relative;
+  overflow-x: hidden !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #324e63;
+}
+
+a, a:hover {
+  text-decoration: none;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.wrapper {
+  width: 100%;
+  height:auto;
+  min-height: 100vh;
+  padding: 20px;
+  padding-top: 100px;
+  display: flex;
+  background-color:#121111;
+}
+
+@media screen and (max-width: 768px) {
+    .wrapper {
+      padding: 20px; /* Maintenir un petit padding pour les petits écrans */
+    }
+  }
+
+  .profile-card {
     width: 100%;
-    height: 92vh;
+    max-width: 700px; /* Réduire la largeur maximale de la carte */
+    min-height: 20px; /* Réduire la hauteur minimale de la carte */
+    margin: auto;
+    box-shadow: 0px 8px 60px -10px rgba(13, 28, 39, 0.6);
+    background: #fff;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 576px) {
+    .profile-card__img {
+      width: 100px; /* Taille plus petite pour mobile */
+      height: 100px;
+    }
   }
   
-/* Conteneur pour limiter la largeur visible */
-.scrolling-text-container {
-    width: 1200px;          /* Largeur du conteneur */
-    height: 30px;          /* Hauteur du conteneur */
-    overflow: hidden;      /* Masque le texte qui dépasse */
-    position: relative;    /* Pour positionner le texte en absolu par rapport à ce conteneur */
-    white-space: nowrap;   /* Empêche le texte de passer à la ligne */
-    background-color: #272525; /* Ajout d'une couleur de fond pour rendre le texte visible */
+.profile-card.active .profile-card__cnt {
+  filter: blur(6px);
 }
 
-/* Texte défilant */
-.scrolling-text {
-    display: inline-block;
-    position:absolute;     /* Positionné par rapport au conteneur */
-    animation: scroll-left 5s linear infinite; /* Animation sur 10 secondes */
-    font-size: 20px;        /* Taille du texte */
-    line-height: 40px;      /* Hauteur de ligne pour centrer le texte verticalement */
-    color: #ca97c9;           /* Couleur du texte */
+.profile-card.active .profile-card__overlay {
+  opacity: 1;
+  pointer-events: auto;
+  transition-delay: .1s;
 }
 
-/* Animation de défilement vers la gauche */
-@keyframes scroll-left {
-    0% {
-        transform: translateX(100%); /* Commence à droite, en dehors du conteneur */
-    }
-    100% {
-        transform: translateX(-100%); /* Finit à gauche, en dehors du conteneur */
-    }
+.profile-card__img {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 4;
+  box-shadow: 0px 5px 50px 0px rgb(108, 68, 252), 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
 }
 
-
-#about {
-    background: #272525;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+@media screen and (max-width: 576px) {
+  .profile-card__img {
+    width: 120px;
+    height: 120px;
+  }
 }
 
-#about img {
-    margin: 20px 0;
-    border: 150px; /* Ajoute une bordure autour du logo */
-    border-radius: 150px; /* Rend l'image ronde */
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transition fluide */
+.profile-card__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-#about img:hover {
-    transform: translateY(10px); /* Légère translation vers le haut */
-    box-shadow: 0 5px rgba(255, 252, 252, 0.338); /* Ajout d'une ombre au survol */
+.profile-card__cnt {
+  margin-top: -35px;
+  text-align: center;
+  padding: 0 20px;
+  padding-bottom: 40px;
+  transition: all .3s;
 }
 
-.logo-link {
-    display: inline-block;
-    border-radius: 50%; /* Assure que le logo est toujours dans un conteneur rond */
-    overflow: hidden; /* Cache le dépassement de l'image */
+.profile-card__name {
+  font-weight: 700;
+  font-size: 24px;
+  color: #6944ff;
+  margin-bottom: 15px;
+}
+
+.profile-card__txt {
+  font-size: 18px;
+  font-weight: 500;
+  color: #324e63;
+  margin-bottom: 15px;
+}
+
+.profile-card__txt strong {
+  font-weight: 700;
+}
+
+.profile-card-loc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.profile-card-loc__icon {
+  display: inline-flex;
+  font-size: 27px;
+  margin-right: 10px;
+}
+
+.profile-card-inf {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 35px;
+}
+
+.profile-card-inf__item {
+  padding: 10px 35px;
+  min-width: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-card-inf__item {
+    padding: 10px 20px;
+    min-width: 120px;
+  }
+}
+
+.profile-card-inf__title {
+  font-weight: 700;
+  font-size: 27px;
+  color: #324e63;
+}
+
+.profile-card-inf__txt {
+  font-weight: 500;
+  margin-top: 7px;
+}
+
+.profile-card-social {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.profile-card-social__item {
+  display: inline-flex;
+  width: 55px;
+  height: 55px;
+  margin: 15px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  font-size: 21px;
+  flex-shrink: 0;
+  transition: all .3s;
+}
+
+@media screen and (max-width: 768px) {
+  .profile-card-social__item {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+}
+
+.profile-card-social__item:hover {
+  transform: scale(1.2);
+}
+
+/* Les réseaux sociaux spécifiques */
+.profile-card-social__item.twitter {
+  background: linear-gradient(45deg, #1da1f2, #0e71c8);
+}
+
+.profile-card-social__item.instagram {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.profile-card-social__item.behance {
+  background: linear-gradient(45deg, #1769ff, #213fca);
+}
+
+.profile-card-social__item.github {
+  background: linear-gradient(45deg, #333333, #626b73);
+}
+
+.profile-card-social__item.tiktok {
+  background: linear-gradient(45deg, #324e63, #414447);
+}
+
+.profile-card-social__item.linkedin {
+  background: linear-gradient(45deg, #d5135a, #f05924);
+}
+
+.profile-card-ctr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 576px) {
+  .profile-card-ctr {
+    flex-wrap: wrap;
+  }
+}
+
+.profile-card__button {
+  background: none;
+  border: none;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  margin: 15px 35px;
+  padding: 15px 40px;
+  min-width: 201px;
+  border-radius: 50px;
+  min-height: 55px;
+  color: #fff;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transition: all .3s;
+}
+
+/* Ajustements pour les boutons selon la taille de l'écran */
+@media screen and (max-width: 768px) {
+  .profile-card__button {
+    min-width: 170px;
+    margin: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .profile-card__button {
+    min-width: inherit;
+    margin: 0;
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.profile-card__button:focus {
+  outline: none !important;
+}
+
+.profile-card__button:hover {
+  transform: translateY(-5px);
+}
+
+.profile-card__button.button--orange {
+  background: linear-gradient(45deg, #d5135a, #f05924);
 }
 
 @import 'https://fonts.googleapis.com/css?family=Roboto+Mono:100';
@@ -127,7 +355,27 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
+  background: url(./assets/anime.jpg) 0 0 no-repeat;
+  background-size: cover; /* Pour que l'image couvre tout le conteneur */
+  background-position: center; /* Pour centrer l'image */
 }
+
+.container::before {
+    content: ""; /* Nécessaire pour créer un pseudo-élément */
+    position: absolute; /* Positionner l'overlay par rapport au conteneur */
+    top: 0; /* Aligner le haut de l'overlay avec le haut du conteneur */
+    left: 0; /* Aligner la gauche de l'overlay avec la gauche du conteneur */
+    right: 0; /* Aligner la droite de l'overlay avec la droite du conteneur */
+    bottom: 0; /* Aligner le bas de l'overlay avec le bas du conteneur */
+    background-color: rgba(0, 0, 0, 0.5); /* Couleur de l'overlay (noir avec 50% de transparence) */
+    z-index: 1; /* S'assurer que l'overlay est au-dessus de l'image */
+  }
+  
+  .container > * { /* Pour s'assurer que le contenu est au-dessus de l'overlay */
+    position: relative; /* Nécessaire pour le positionnement */
+    z-index: 2; /* S'assurer que le contenu est au-dessus de l'overlay */
+  }
+
 .text {
   font-weight: 100;
   font-size: 28px;
@@ -138,7 +386,7 @@ body {
 }
 
   #competences {
-    background:#272525;
+    background-color:#121111;
     text-align: center;
     display: flex;
     justify-content:center;
@@ -147,7 +395,7 @@ body {
   }
 
   h2,h1 {
-    color:#b08db4;
+    color:#fd2e65;
     font-size: 2rem;
   }
 
@@ -158,7 +406,7 @@ body {
   h2{width: 100%;}
 
   #creations {
-    background:#272525;
+    background-color:#121111;
     text-align: center;
     display: flex;
     justify-content:center;
@@ -178,14 +426,14 @@ body {
     text-align:center; 
     margin: 20px 0; /* Ajoute de l'espace au-dessus et en dessous du titre */
     font-size: 2rem; 
-    color: #ca97c9; 
+    color: #fd2e65;
     font-weight: bold; /* Gras */
 }
 
 .item {
     background: rgb(255, 255, 255);
     padding: 20px; /* Réduit le padding pour une apparence plus légère */
-    border: 1px solid #ca97c9;
+    border: 1px;
     border-radius: 10px; /* Bordure légèrement moins épaisse */
     text-align: center;
     width: 200px;
@@ -199,7 +447,7 @@ body {
 }
 
 .open-modal {
-    background-color: #ca97c9;
+    background-color:#fd2e65;
     color: rgb(255, 255, 255);
     border: none;
     padding: 10px;
@@ -209,7 +457,7 @@ body {
 }
 
 .open-modal:hover {
-    background-color: #b08db4; /* Changement de couleur plus doux au survol */
+    background-color: #fd2e65; /* Changement de couleur plus doux au survol */
 }
 
 .modal {
@@ -251,7 +499,7 @@ body {
 }
 
   #objectifs {
-    background:#272525;
+    background-color:#121111;
     text-align: center;
     display: flex;
     justify-content:center;
@@ -367,7 +615,7 @@ padding: 24px 4px;
 
     .submit-btn {
        display: inline-block;
-       background-color:#ca97c9;
+       background-color:#fd2e65;
        color: #fff;
        font-family: Raleway, sans-serif;
        text-transform: uppercase;
