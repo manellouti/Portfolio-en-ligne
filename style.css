@@ -34,7 +34,7 @@ img {
     position: fixed;
     top: 0;
     height: 70px;
-    z-index: 1;
+    z-index: 10;
   }
   
   body {
@@ -288,20 +288,16 @@ a, a:hover {
   background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 }
 
-.profile-card-social__item.behance {
-  background: linear-gradient(45deg, #1769ff, #213fca);
-}
-
-.profile-card-social__item.github {
-  background: linear-gradient(45deg, #333333, #626b73);
+.profile-card-social__item.profile-card-social__item.github {
+  background:linear-gradient(45deg, #9196a0, #080911);
 }
 
 .profile-card-social__item.tiktok {
-  background: linear-gradient(45deg, #324e63, #414447);
+  background: linear-gradient(45deg, #01060a, #b83b88);
 }
 
 .profile-card-social__item.linkedin {
-  background: linear-gradient(45deg, #d5135a, #f05924);
+  background: linear-gradient(45deg, #ffffff, #3407be);
 }
 
 .profile-card-ctr {
@@ -721,13 +717,12 @@ padding: 24px 4px;
     max-width: 550px;
     max-height: 500px;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 1%;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     background:#ffffff;
-    border-radius: 80px 10px;
-    border: 10px;
+    border-radius: 8px 8px 2px;
 
     .title {
        text-align: center;
@@ -736,8 +731,8 @@ padding: 24px 4px;
        letter-spacing: 3px;
        font-size: 36px;
        line-height: 48px;
-       padding-bottom: 48px;
-       padding-top: 20%;
+       padding-bottom: 50px;
+       padding-top: 10%;
     }
  }
 
@@ -745,7 +740,7 @@ padding: 24px 4px;
  .contact-form {
     .form-field {
        position: relative;
-       margin: 30px 0;
+       margin: 20px 0;
     }
     .input-text {
        display: block;
